@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegireddy Mallanna - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --accent: #0f766e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        /* Top Header */
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-left h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .header-left h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .header-right p {
+            margin-bottom: 3px;
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .header-right a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout Grid */
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Headings */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Experience Timeline */
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .bullet-points {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .bullet-points li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .bullet-points li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Projects Section */
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .project-tech {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .project-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Sidebar Sections */
+        .skills-group {
+            margin-bottom: 15px;
+        }
+
+        .skills-group h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .education-item h4 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .education-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .goals-list {
+            list-style: none;
+        }
+
+        .goals-list li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .goals-list li::before {
+            content: "›";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+            font-weight: bold;
+            top: -2px;
+        }
+
+        /* Action Buttons for Screen */
+        .action-bar {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .action-bar {
+                display: none;
+            }
+
+            @page {
+                size: A4;
+                margin: 1.5cm;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .header-right {
+                text-align: left;
+            }
+
+            body {
+                padding: 15px 10px;
+            }
+
+            .resume-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Action Buttons for Online Visitors -->
+    <div class="action-bar">
+        <a href="index.html" class="btn btn-secondary">← Back to Portfolio</a>
+        <button onclick="window.print()" class="btn btn-primary">Print / Save as PDF</button>
+    </div>
+
+    <div class="resume-container">
+        <header>
+            <div class="header-left">
+                <h1>Vegireddy Mallanna</h1>
+                <h2>.NET Full Stack & Automation Engineer</h2>
+            </div>
+            <div class="header-right">
+                <p>📍 Bangalore, India</p>
+                <p>📧 <a href="mailto:vegireddymallanna@gmail.com">vegireddymallanna@gmail.com</a></p>
+                <p>📞 +91 9010919637</p>
+                <p>🔗 <a href="https://linkedin.com/in/vegireddy-mallanna" target="_blank">linkedin.com/in/vegireddy-mallanna</a></p>
+                <p>🐙 <a href="https://github.com/vegireddy-mallanna" target="_blank">github.com/vegireddy-mallanna</a></p>
+            </div>
+        </header>
+
+        <div class="resume-grid">
+            <!-- Left Column: Summary, Experience, Projects -->
+            <div class="main-column">
+                <section>
+                    <h3 class="section-title">Professional Summary</h3>
+                    <p class="about-text">
+                        Results-driven software engineer with experience in C#, .NET, WPF, WinForms, SQL Server, Angular, and Python Selenium Automation. Specialized in enterprise-grade application development, automation frameworks, process monitoring systems, and industrial software solutions. Passionate about solving complex business problems through technology.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="section-title">Professional Experience</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="company-name">Utthunga Technologies</span>
+                                <br>
+                                <span class="job-title">Associate Software Engineer</span>
+                            </div>
+                            <span class="job-date">Jan 2023 – Present</span>
+                        </div>
+                        <ul class="bullet-points">
+                            <li>Developed enterprise applications using C#, WPF, and WinForms.</li>
+                            <li>Built process monitoring faceplates and industrial control interfaces.</li>
+                            <li>Developed migration plugins for Honeywell Experion systems.</li>
+                            <li>Designed and implemented a custom Selenium + PyTest automation framework.</li>
+                            <li>Improved software quality through Coverity issue resolution and code reviews.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title">Featured Projects</h3>
+                    
+                    <div class="project-item">
+                        <span class="project-title">QCS Automation Framework</span>
+                        <div class="project-tech">Python, Selenium, PyTest, Allure</div>
+                        <p class="project-desc">Built a reusable QA automation architecture from scratch. Integrated automated test execution, screenshot capture, and HTML test reports, reducing manual QA regression cycles by 40%+.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <span class="project-title">Experion Upgrade Tool</span>
+                        <div class="project-tech">WPF, MVVM, C#</div>
+                        <p class="project-desc">Led requirements analysis and implementation for Honeywell system migration plugins, ensuring flawless upgrade paths for industrial clients.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <span class="project-title">MasterLink – Gas Volume Corrector</span>
+                        <div class="project-tech">C#, WPF, SQLite</div>
+                        <p class="project-desc">Resolved critical bugs and optimized SQLite database queries to improve gas flow corrector software performance and field reliability.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <span class="project-title">Graphics Match Tool</span>
+                        <div class="project-tech">WinForms, WPF, LINQ, MS Access</div>
+                        <p class="project-desc">Implemented comprehensive application logging and fixed Static Analysis (Coverity) compliance issues, strengthening security and supportability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Skills, Education, Achievements, Goals -->
+            <div class="sidebar-column">
+                <section>
+                    <h3 class="section-title">Technical Skills</h3>
+                    
+                    <div class="skills-group">
+                        <h4>Programming</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">.NET</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">VBScript</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Desktop & UI</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">WPF</span>
+                            <span class="skill-tag">WinForms</span>
+                            <span class="skill-tag">MVVM</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Frontend</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML & CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Databases</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">SQL Server</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">MS Access</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Automation</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">PyTest</span>
+                            <span class="skill-tag">Allure Reports</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Tools</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">SVN</span>
+                            <span class="skill-tag">Coverity</span>
+                            <span class="skill-tag">InstallShield</span>
+                            <span class="skill-tag">Redmine</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <h4>B.Tech in Computer Science</h4>
+                        <p>Computer Science & Engineering</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title">Key Achievements</h3>
+                    <ul class="bullet-points">
+                        <li>2+ Years Professional Experience.</li>
+                        <li>Delivered Honeywell project software.</li>
+                        <li>Built QA automation framework.</li>
+                        <li>Manual testing effort cut by 40%.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="section-title">Future Goals</h3>
+                    <ul class="goals-list">
+                        <li>Pursuing MSc in Computing/AI in the UK.</li>
+                        <li>Aspiring Software Architect.</li>
+                        <li>Focusing on Cloud, DevOps, and Enterprise AI.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Trigger print automatically if '?print=true' query parameter is present
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('print') === 'true') {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    window.print();
+                }, 500);
+            });
+        }
+    </script>
+</body>
+</html>
